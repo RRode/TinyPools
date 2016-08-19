@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TinyPools", "TinyPools\TinyPools.csproj", "{3EA9B7DD-2CF5-46F6-92FE-895EE2CF3CED}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TinyPools.UnitTests", "TinyPools.UnitTests\TinyPools.UnitTests.csproj", "{76222C02-1CF3-485B-B25A-AA2FD6AC881E}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{3EA9B7DD-2CF5-46F6-92FE-895EE2CF3CED}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3EA9B7DD-2CF5-46F6-92FE-895EE2CF3CED}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3EA9B7DD-2CF5-46F6-92FE-895EE2CF3CED}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3EA9B7DD-2CF5-46F6-92FE-895EE2CF3CED}.Release|Any CPU.Build.0 = Release|Any CPU
+		{76222C02-1CF3-485B-B25A-AA2FD6AC881E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{76222C02-1CF3-485B-B25A-AA2FD6AC881E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{76222C02-1CF3-485B-B25A-AA2FD6AC881E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{76222C02-1CF3-485B-B25A-AA2FD6AC881E}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
