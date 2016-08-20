@@ -88,7 +88,16 @@ namespace TinyPools.UnitTests.ObjectPool_specs
             pooledObject.Dispose();
 
             Assert.That(_objectPool.StoredObjects, Is.EqualTo(1));
-            Assert.That(pooledObject.Object, Is.Null);
+        }
+
+        [Test]
+        public void Rejects_access_to_an_object_returned_to_pool()
+        {
+            var pooledObject = _objectPool.GetObject();
+            pooledObject.Dispose();
+
+            Assert.That(() => pooledObject.Object,
+                Throws.TypeOf<ObjectDisposedException>().With.Message.Contains("PooledObject<System.Object>"));
         }
 
         [Test]
