@@ -3,11 +3,10 @@
 namespace TinyPools
 {
     /// <summary>
-    /// Wrapper for pooled object returned by object pool allowing thread
-    /// safe access and release of pooled object.
+    /// Wrapper for pooled object returned by object pool.
     /// </summary>
     /// <typeparam name="T">
-    /// Type of the object that is stored in the object pool
+    /// Type of objects stored in the pool.
     /// </typeparam>
     public sealed class PooledObject<T> : IDisposable where T : class
     {
@@ -26,7 +25,7 @@ namespace TinyPools
         /// Gets the object returned from object pool.
         /// </summary>
         /// <exception cref="ObjectDisposedException">
-        /// Pooled object was returned to pool
+        /// Pooled object was returned to pool.
         /// </exception>
         public T Object
         {
@@ -45,8 +44,8 @@ namespace TinyPools
         }
 
         /// <summary>
-        /// Returns the object back to object pool. Must be called explicitly
-        ///  since dispose is not called during object finalization.
+        /// Returns the object back to object pool. Must be called explicitly 
+        /// since dispose is not called during object finalization.
         /// </summary>
         public void Dispose()
         {

@@ -3,6 +3,10 @@ using System.Collections.Generic;
 
 namespace TinyPools
 {
+    /// <summary>
+    /// Represents a thread safe object pool implementation.
+    /// </summary>
+    /// <typeparam name="T">Type of objects stored in the pool.</typeparam>
     public class ObjectPool<T> where T : class
     {
         private const int UNLIMITED_CAPACITY = -1;
@@ -10,6 +14,11 @@ namespace TinyPools
         private readonly Func<T> _factory;
         private readonly Queue<T> _objectQueue = new Queue<T>();
 
+        /// <summary>
+        /// Initializes a new instance of object pool class that is empty and has unlimited capacity.
+        /// </summary>
+        /// <param name="factory">The delegate used to create instances of pooled objects.</param>
+        /// <exception cref="ArgumentNullException">The factory argument is null.</exception>
         public ObjectPool(Func<T> factory)
         {
             if (factory == null)
@@ -20,6 +29,14 @@ namespace TinyPools
             _factory = factory;
         }
 
+        /// <summary>
+        /// Initializes a new instance of object pool class that is empty and has limited storage capacity.
+        /// Objects returned after object pool is full will be released for garbage collection.
+        /// </summary>
+        /// <param name="factory">The delegate used to create instances of pooled objects.</param>
+        /// <param name="capacity">Maximum number of stored objects in the pool.</param>
+        /// <exception cref="ArgumentNullException">Factory argument is null.</exception>
+        /// <exception cref="ArgumentException">Capacity is less than 1.</exception>
         public ObjectPool(Func<T> factory, int capacity)
             : this(factory)
         {
@@ -31,6 +48,9 @@ namespace TinyPools
             _capacity = capacity;
         }
 
+        /// <summary>
+        /// Total count of currently available objects in the pool.
+        /// </summary>
         public int StoredObjects
         {
             get
@@ -42,6 +62,10 @@ namespace TinyPools
             }
         }
 
+        /// <summary>
+        /// Returns a stored object from the pool or creates a new instance if none are available.
+        /// </summary>
+        /// <returns>Wrapper containing pooled object.</returns>
         public PooledObject<T> GetObject()
         {
             lock (_objectQueue)
