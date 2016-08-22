@@ -11,7 +11,7 @@ namespace TinyPools.UnitTests.MemoryPool_specs
             var segment = new SegmentDefinition(1);
             var pool = new MemoryPool<int>(segment);
 
-            Assert.That(pool.Segments[0].TotalStoredArrays, Is.Zero);
+            Assert.That(pool.Segments[0].StoredArrays, Is.Zero);
         }
     }
 
@@ -30,7 +30,7 @@ namespace TinyPools.UnitTests.MemoryPool_specs
             firstArray.Dispose();
             secondArray.Dispose();
 
-            Assert.That(pool.Segments[0].TotalStoredArrays, Is.EqualTo(capacity));
+            Assert.That(pool.Segments[0].StoredArrays, Is.EqualTo(capacity));
         }
     }
 
@@ -131,7 +131,7 @@ namespace TinyPools.UnitTests.MemoryPool_specs
 
             pooledArray.Dispose();
 
-            Assert.That(_pool.Segments[1].TotalStoredArrays, Is.EqualTo(1));
+            Assert.That(_pool.Segments[1].StoredArrays, Is.EqualTo(1));
         }
 
         [Test]

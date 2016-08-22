@@ -2,10 +2,19 @@ using System;
 
 namespace TinyPools
 {
+    /// <summary>
+    /// Defines a segment in the memory pool.
+    /// </summary>
     public sealed class SegmentDefinition
     {
         private readonly int _capacity;
 
+        /// <summary>
+        /// Initializes a new instance of segment definition with unlimited capacity 
+        /// of stored arrays.
+        /// </summary>
+        /// <param name="arraySize">Size of arrays contained in this segment.</param>
+        /// <exception cref="ArgumentException">Array size is smaller than 1.</exception>
         public SegmentDefinition(long arraySize)
         {
             if (arraySize < 1)
@@ -16,6 +25,16 @@ namespace TinyPools
             ArraySize = arraySize;
         }
 
+        /// <summary>
+        /// Initializes a new instance of segment definition with defined maximum capacity 
+        /// of stored arrays.
+        /// </summary>
+        /// <param name="arraySize">Size of arrays contained in this segment.</param>
+        /// <param name="capacity">Maximum number of stored arrays for this segment.</param>
+        /// <exception cref="ArgumentException">
+        /// Array size is smaller than 1. -or- 
+        /// Segment capacity is smaller than 1.
+        /// </exception>
         public SegmentDefinition(long arraySize, int capacity)
             : this(arraySize)
         {
@@ -27,6 +46,9 @@ namespace TinyPools
             _capacity = capacity;
         }
 
+        /// <summary>
+        /// Size of arrays defined for this segment.
+        /// </summary>
         public long ArraySize { get; }
 
         internal Segment<T> CreateSegment<T>()

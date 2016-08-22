@@ -49,7 +49,7 @@ namespace TinyPools
         }
 
         /// <summary>
-        /// Total count of currently available objects in the pool.
+        /// Count of currently available objects in the pool.
         /// </summary>
         public int StoredObjects
         {

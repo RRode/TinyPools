@@ -1,24 +1,34 @@
 ﻿namespace TinyPools
 {
+    /// <summary>
+    /// Represents a memory pool segment that contains arrays of defined size.
+    /// </summary>
+    /// <typeparam name="T">Type of object arrays stored in the segment.</typeparam>
     public class Segment<T>
     {
         private readonly ObjectPool<T[]> _arrayPool;
 
-        internal Segment(long size)
+        internal Segment(long arraySize)
         {
-            Size = size;
-            _arrayPool = new ObjectPool<T[]>(() => new T[size]);
+            ArraySize = arraySize;
+            _arrayPool = new ObjectPool<T[]>(() => new T[arraySize]);
         }
 
-        internal Segment(long size, int capacity)
+        internal Segment(long arraySize, int capacity)
         {
-            Size = size;
-            _arrayPool = new ObjectPool<T[]>(() => new T[size], capacity);
+            ArraySize = arraySize;
+            _arrayPool = new ObjectPool<T[]>(() => new T[arraySize], capacity);
         }
 
-        public long Size { get; }
+        /// <summary>
+        /// Size of arrays stored in this segment.
+        /// </summary>
+        public long ArraySize { get; }
 
-        public long TotalStoredArrays
+        /// <summary>
+        /// Count of currently available arrays in the pool segment.
+        /// </summary>
+        public long StoredArrays
         {
             get
             {
