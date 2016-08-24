@@ -4,12 +4,12 @@ using System.Threading.Tasks;
 
 namespace TinyPools.Samples
 {
-    internal class ExpensiveClass
+    internal class ExpensiveObject
     {
         private static int _instanceCount = -1;
         private readonly int _instanceNumber;
 
-        public ExpensiveClass()
+        public ExpensiveObject()
         {
             Task.Delay(200).Wait();
             _instanceNumber = Interlocked.Increment(ref _instanceCount);

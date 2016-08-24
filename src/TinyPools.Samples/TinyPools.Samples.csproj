@@ -42,7 +42,7 @@
     <Compile Include="..\SharedAssemblyInfo.cs">
       <Link>Properties\SharedAssemblyInfo.cs</Link>
     </Compile>
-    <Compile Include="ExpensiveClass.cs" />
+    <Compile Include="ExpensiveObject.cs" />
     <Compile Include="MemoryPoolSample.cs" />
     <Compile Include="ObjectPoolSample.cs" />
     <Compile Include="Program.cs" />

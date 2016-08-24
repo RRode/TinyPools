@@ -10,7 +10,7 @@ namespace TinyPools.Samples
             Console.WriteLine("Starting object pool sample");
 
             //Object pool is created by providing factory method for the object that will be stored in the pool
-            var objectPool = new ObjectPool<ExpensiveClass>(() => new ExpensiveClass());
+            var objectPool = new ObjectPool<ExpensiveObject>(() => new ExpensiveObject());
 
             var task1 = Task.Run(() => UseObjectPool(objectPool));
             var task2 = Task.Run(() => UseObjectPool(objectPool));
@@ -19,7 +19,7 @@ namespace TinyPools.Samples
             Task.WaitAll(task1, task2, task3);
         }
 
-        private static void UseObjectPool(ObjectPool<ExpensiveClass> objectPool)
+        private static void UseObjectPool(ObjectPool<ExpensiveObject> objectPool)
         {
             for (var i = 0; i < 5; i++)
             {
@@ -27,8 +27,8 @@ namespace TinyPools.Samples
                 using (var pooledObject = objectPool.GetObject())
                 {
                     //Get and use the pooled object
-                    var expensiveClass = pooledObject.Object;
-                    expensiveClass.DoSomeWork();
+                    var expensiveObject = pooledObject.Object;
+                    expensiveObject.DoSomeWork();
                 }
                 //Dispose of the wrapper to return the object into pool
             }
