@@ -19,6 +19,10 @@ namespace TinyPools.Samples
                 case '2':
                     MemoryPoolSample.Run();
                     break;
+
+                case '3':
+                    WrongPollUsageSample.Run();
+                    break;
             }
 
             Console.WriteLine("Sample completed. Press any key to exit.");
@@ -30,6 +34,7 @@ namespace TinyPools.Samples
             Console.WriteLine("Please select a sample to execute:");
             Console.WriteLine("1 - Execute object pool sample");
             Console.WriteLine("2 - Execute memory pool sample");
+            Console.WriteLine("3 - Execute wrong pool sample");
         }
     }
 }
