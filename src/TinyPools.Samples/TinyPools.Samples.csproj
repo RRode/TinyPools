@@ -48,6 +48,8 @@
       <Link>Properties\SharedAssemblyInfo.cs</Link>
     </Compile>
     <Compile Include="ExpensiveClass.cs" />
+    <Compile Include="MemoryPoolSample.cs" />
+    <Compile Include="ObjectPoolSample.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
