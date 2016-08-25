@@ -11,7 +11,7 @@ namespace TinyPools.Samples
 
             var random = new Random();
 
-            //Define sizes returned from memory pool segments
+            //Define array sizes returned from memory pool segments
             var smallSegment = new SegmentDefinition(700);
 
             //Limit medium and largest array segment to store only 2 arrays at a time
