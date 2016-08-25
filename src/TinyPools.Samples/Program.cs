@@ -32,9 +32,9 @@ namespace TinyPools.Samples
         private static void PrintHelp()
         {
             Console.WriteLine("Please select a sample to execute:");
-            Console.WriteLine("1 - Execute object pool sample");
-            Console.WriteLine("2 - Execute memory pool sample");
-            Console.WriteLine("3 - Execute wrong pool sample");
+            Console.WriteLine("1 - Object pool sample");
+            Console.WriteLine("2 - Memory pool sample");
+            Console.WriteLine("3 - Wrong pool usage sample");
         }
     }
 }
