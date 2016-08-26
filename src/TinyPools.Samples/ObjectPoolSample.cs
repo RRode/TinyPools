@@ -9,7 +9,7 @@ namespace TinyPools.Samples
         {
             Console.WriteLine("Starting object pool sample");
 
-            //Object pool is created by providing factory method for the object that will be stored in the pool
+            //Object pool is created by providing a factory method for the object that will be stored in the pool
             var objectPool = new ObjectPool<ExpensiveObject>(() => new ExpensiveObject());
 
             var task1 = Task.Run(() => UseObjectPool(objectPool));

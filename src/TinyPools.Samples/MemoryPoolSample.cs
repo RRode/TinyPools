@@ -11,14 +11,14 @@ namespace TinyPools.Samples
 
             var random = new Random();
 
-            //Define sizes returned from memory pool segments
+            //Define array sizes returned from memory pool segments
             var smallSegment = new SegmentDefinition(700);
 
             //Limit medium and largest array segment to store only 2 arrays at a time
             var mediumSegment = new SegmentDefinition(1400, 2);
             var largeSegment = new SegmentDefinition(2000, 2);
 
-            //Create a memory pool with defined segements
+            //Create a memory pool with defined segments
             var memoryPool = new MemoryPool<int>(smallSegment, mediumSegment, largeSegment);
 
             var task1 = Task.Run(() => UseMemoryPool(random, memoryPool));
@@ -34,8 +34,9 @@ namespace TinyPools.Samples
             {
                 var requestedSize = random.Next(1, 2000);
 
-                //Get an array wrapper from memory pool. Note that array size will be equal
-                //or larger than requested size, depending on your array segments definition.
+                //Get an array wrapper from memory pool. Note that returned array size will 
+                //be equal to nearest larger of equal segment size. Requesting an array larger
+                //than the largest defined segment will throw an exception. 
                 using (var pooledArray = memoryPool.GetArray(requestedSize))
                 {
                     //Get and use the array from the pool
@@ -46,7 +47,7 @@ namespace TinyPools.Samples
                     {
                         array[j] = Task.CurrentId.HasValue ? Task.CurrentId.Value : -1;
                     }
-
+                    
                     Task.Delay(20).Wait();
                     Console.WriteLine($"Task with ID [{Task.CurrentId}] requested an array of size {requestedSize} and got an array of size {array.Length}.");
                 }
