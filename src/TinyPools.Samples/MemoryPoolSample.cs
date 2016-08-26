@@ -18,7 +18,7 @@ namespace TinyPools.Samples
             var mediumSegment = new SegmentDefinition(1400, 2);
             var largeSegment = new SegmentDefinition(2000, 2);
 
-            //Create a memory pool with defined segements
+            //Create a memory pool with defined segments
             var memoryPool = new MemoryPool<int>(smallSegment, mediumSegment, largeSegment);
 
             var task1 = Task.Run(() => UseMemoryPool(random, memoryPool));
