@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<package >
+  <metadata>
+    <id>$id$</id>
+    <version>$version$</version>
+    <authors>Rok Rode</authors>
+    <owners>Rok Rode</owners>
+    <licenseUrl>https://github.com/RRode/TinyPools/blob/master/LICENSE</licenseUrl>
+    <projectUrl>https://github.com/RRode/TinyPools</projectUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>
+      Yet another thread safe object pool and memory pool implementation in .NET.
+      
+      Supported platforms: - .NET 4.0+
+    </description>
+    <copyright>Copyright 2016</copyright>
+    <tags>object memory pool net40</tags>
+  </metadata>
+</package>

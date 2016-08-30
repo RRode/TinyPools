@@ -1,0 +1,1 @@
+nuget pack ..\src\TinyPools\TinyPools.csproj -Build -Prop Configuration=Release
