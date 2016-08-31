@@ -1,8 +1,8 @@
 # TinyPools
 Yet another thread safe object pool implementation in .NET.
 
-## License
-TinyPools is licensed under [MIT license](LICENSE).
+[![license](https://img.shields.io/github/license/RRode/TinyPools.svg?maxAge=2592000?style=plastic)](LICENSE)
+[![NuGet](https://img.shields.io/nuget/v/TinyPools.svg?maxAge=2592000?style=plastic)](https://www.nuget.org/packages/TinyPools)
 
 ## How to
 ### Create an object pool
