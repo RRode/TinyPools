@@ -4,6 +4,9 @@ Yet another thread safe object pool implementation in .NET.
 [![license](https://img.shields.io/github/license/RRode/TinyPools.svg?maxAge=2592000?style=plastic)](LICENSE)
 [![NuGet](https://img.shields.io/nuget/v/TinyPools.svg?maxAge=2592000?style=plastic)](https://www.nuget.org/packages/TinyPools)
 
+## NOTE
+Since similar and better functionality is now provided as part of .NET Core 2.1 and also as a [Nuget package](https://www.nuget.org/packages/System.Buffers) consider using [Arraypool<T>](https://docs.microsoft.com/en-us/dotnet/api/system.buffers.arraypool-1?view=netcore-2.1) instead of MemoryPool.
+
 ## How to
 ### Create an object pool
 Object pool is created by providing a factory method for the object that will be stored in the pool.
